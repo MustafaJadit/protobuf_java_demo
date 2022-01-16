@@ -32,8 +32,8 @@ example/simple/Simple.java
  example.simple.Simple$SimpleMessage$1
  example.simple.Simple$SimpleMessage$Builder
  example.simple.Simple$SimpleMessageOrBuilder
-com/github/mustafaj/SimpleMain.java
- com.github.mustafaj.SimpleMain
+com/github/mustafaj/AddressbookMain.java
+ com.github.mustafaj.AddressbookMain
 Services.java
  Services
  Services$SearchRequest
@@ -44,9 +44,9 @@ Services.java
  Services$SearchResponse$1
  Services$SearchResponse$Builder
  Services$SearchResponseOrBuilder
-com/github/mustafaj/ProtoToJSONMain.java
- com.github.mustafaj.ProtoToJSONMain
+com/github/mustafaj/SimpleMain.java
+ com.github.mustafaj.SimpleMain
 com/example/tutorial/protos/PersonOrBuilder.java
  com.example.tutorial.protos.PersonOrBuilder
-com/github/mustafaj/AddressbookMain.java
- com.github.mustafaj.AddressbookMain
+com/github/mustafaj/ProtoToJSONMain.java
+ com.github.mustafaj.ProtoToJSONMain

@@ -11,8 +11,7 @@ public class ProtoToJSONMain {
     public static void main(String[] args) throws InvalidProtocolBufferException {
 
 
-        Simple.SimpleMessage.Builder builder=Simple.SimpleMessage.newBuilder();
-
+        Simple.SimpleMessage.Builder builder = Simple.SimpleMessage.newBuilder();
 
 
         // simple fields
@@ -27,24 +26,17 @@ public class ProtoToJSONMain {
                 .addAllSampleList(Arrays.asList(4, 5, 6));
 
 
-        // Print this as a JSON
-        String jsonString = JsonFormat.printer()
-                // .includingDefaultValueFields() - options
-                .print(builder);
-        System.out.println(jsonString);
+        System.out.println(builder.toString());
+        String print = JsonFormat.printer().print(builder);
+        System.out.println(print);
 
+        System.out.println("JsonFormat.printer().print(builder); ended");
 
-        // parse JSON into Protobuf
+        System.out.println(JsonFormat.printer().includingDefaultValueFields());
+        System.out.println("JsonFormat.printer().includingDefaultValueFields() ended");
+
         Simple.SimpleMessage.Builder builder2 = Simple.SimpleMessage.newBuilder();
-
-        String print1 = JsonFormat.printer().includingDefaultValueFields().print(builder);
-        JsonFormat.parser().ignoringUnknownFields().merge(print1,builder2);
-
-        JsonFormat.parser()
-                .ignoringUnknownFields()
-                .merge(jsonString, builder2);
-
-        System.out.println(builder2);
-
+        JsonFormat.parser().merge(print,builder2);
+        System.out.println(builder2.toString());
     }
 }

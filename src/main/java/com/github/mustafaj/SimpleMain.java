@@ -1,5 +1,6 @@
 package com.github.mustafaj;
 
+import com.google.protobuf.ExtensionRegistryLite;
 import example.simple.Simple.SimpleMessage;
 
 import java.io.FileInputStream;
@@ -24,38 +25,33 @@ public class SimpleMain {
 
         builder.addSampleList(1)
                 .addSampleList(2)
-                .addAllSampleList(Arrays.asList(56,2,4));
+                .addAllSampleList(Arrays.asList(56, 2, 4));
         // repeated field
 
         System.out.println(builder.toString());
-
-
+        System.out.println("END");
         SimpleMessage message = builder.build();
 
-        // write the protocol buffers binary to a file
         try {
-            FileOutputStream outputStream = new FileOutputStream("simple_message.bin");
-            message.writeTo(outputStream);
-            outputStream.close();
+            FileOutputStream fileOutputStream = new FileOutputStream("fos.bin");
+            message.writeTo(fileOutputStream);
+            fileOutputStream.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        // send as byte array
-        // byte[] bytes = message.toByteArray();
-
         try {
-            System.out.println("Reading from file... ");
-            FileInputStream fileInputStream=new FileInputStream("simple_message.bin");
-            SimpleMessage messageFromFile = SimpleMessage.parseFrom(fileInputStream);
-            System.out.println(messageFromFile);
+            FileInputStream fileInputStream = new FileInputStream("fos.bin");
+            SimpleMessage simpleMessage = SimpleMessage.parseFrom(fileInputStream, ExtensionRegistryLite.newInstance());
+            System.out.println(simpleMessage);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
+
 
     }
 }
