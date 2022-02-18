@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+
+message MaestroReadSetting{
+  oneof setting_type{
+    CommonSettingType maestro = 1;
+    PrestoSettingType presto=2;
+    StrettoSettingType stretto=3;
+    AllegroSettingType allegro=4;
+  }
+}
+
+enum CommonSettingType{CONE = 0;CTWO = 1;CTHREE = 2;}
+
+enum PrestoSettingType{PONE = 0;PTWO = 1;PTHREE = 2;}
+
+enum StrettoSettingType{SONE = 0;STWO = 1;STHREE = 2;}
+
+enum AllegroSettingType{AONE = 0;ATWO = 1;ATHREE = 2;}

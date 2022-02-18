@@ -1,5 +1,6 @@
 package com.github.mustafaj;
 
+import com.google.protobuf.BoolValue;
 import com.google.protobuf.ExtensionRegistryLite;
 import example.simple.Simple.SimpleMessage;
 
@@ -13,6 +14,30 @@ public class SimpleMain {
 
     public static void main(String[] args) {
 
+//        extracted();
+
+//        extracted2();
+
+        extracted3();
+    }
+
+    private static void extracted3() {
+        SimpleMessage.Builder builder = SimpleMessage.newBuilder();
+        builder.setIsSimple(false);
+        System.out.println("builder.getIsSimple() "+builder.getIsSimple());
+    }
+
+    private static void extracted2() {
+        SimpleMessage.Builder builder = SimpleMessage.newBuilder();
+        builder.setOptionalBool(BoolValue.newBuilder().setValue(false));
+
+
+        System.out.println("builder.getOptionalBool() "+builder.getOptionalBool().getValue());
+        System.out.println("builder.hasOptionalBool() "+builder.hasOptionalBool());
+    }
+
+
+    private static void extracted() {
         System.out.println("Hello world!");
 
         SimpleMessage.Builder builder = SimpleMessage.newBuilder();
@@ -51,7 +76,5 @@ public class SimpleMain {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
 }

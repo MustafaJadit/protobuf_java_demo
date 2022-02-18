@@ -14,6 +14,123 @@ public final class Simple {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  /**
+   * Protobuf enum {@code example.simple.Triple}
+   */
+  public enum Triple
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>UNSET = 0;</code>
+     */
+    UNSET(0),
+    /**
+     * <code>TRUE = 1;</code>
+     */
+    TRUE(1),
+    /**
+     * <code>FALSE = 2;</code>
+     */
+    FALSE(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>UNSET = 0;</code>
+     */
+    public static final int UNSET_VALUE = 0;
+    /**
+     * <code>TRUE = 1;</code>
+     */
+    public static final int TRUE_VALUE = 1;
+    /**
+     * <code>FALSE = 2;</code>
+     */
+    public static final int FALSE_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Triple valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Triple forNumber(int value) {
+      switch (value) {
+        case 0: return UNSET;
+        case 1: return TRUE;
+        case 2: return FALSE;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Triple>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        Triple> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Triple>() {
+            public Triple findValueByNumber(int number) {
+              return Triple.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return example.simple.Simple.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final Triple[] VALUES = values();
+
+    public static Triple valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Triple(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:example.simple.Triple)
+  }
+
   public interface SimpleMessageOrBuilder extends
       // @@protoc_insertion_point(interface_extends:example.simple.SimpleMessage)
       com.google.protobuf.MessageOrBuilder {
@@ -58,6 +175,32 @@ public final class Simple {
      * @return The sampleList at the given index.
      */
     int getSampleList(int index);
+
+    /**
+     * <code>.example.simple.Triple triple = 5;</code>
+     * @return The enum numeric value on the wire for triple.
+     */
+    int getTripleValue();
+    /**
+     * <code>.example.simple.Triple triple = 5;</code>
+     * @return The triple.
+     */
+    example.simple.Simple.Triple getTriple();
+
+    /**
+     * <code>.google.protobuf.BoolValue optional_bool = 6;</code>
+     * @return Whether the optionalBool field is set.
+     */
+    boolean hasOptionalBool();
+    /**
+     * <code>.google.protobuf.BoolValue optional_bool = 6;</code>
+     * @return The optionalBool.
+     */
+    com.google.protobuf.BoolValue getOptionalBool();
+    /**
+     * <code>.google.protobuf.BoolValue optional_bool = 6;</code>
+     */
+    com.google.protobuf.BoolValueOrBuilder getOptionalBoolOrBuilder();
   }
   /**
    * Protobuf type {@code example.simple.SimpleMessage}
@@ -74,6 +217,7 @@ public final class Simple {
     private SimpleMessage() {
       name_ = "";
       sampleList_ = emptyIntList();
+      triple_ = 0;
     }
 
     @java.lang.Override
@@ -142,6 +286,25 @@ public final class Simple {
                 sampleList_.addInt(input.readInt32());
               }
               input.popLimit(limit);
+              break;
+            }
+            case 40: {
+              int rawValue = input.readEnum();
+
+              triple_ = rawValue;
+              break;
+            }
+            case 50: {
+              com.google.protobuf.BoolValue.Builder subBuilder = null;
+              if (optionalBool_ != null) {
+                subBuilder = optionalBool_.toBuilder();
+              }
+              optionalBool_ = input.readMessage(com.google.protobuf.BoolValue.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(optionalBool_);
+                optionalBool_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -267,6 +430,51 @@ public final class Simple {
     }
     private int sampleListMemoizedSerializedSize = -1;
 
+    public static final int TRIPLE_FIELD_NUMBER = 5;
+    private int triple_;
+    /**
+     * <code>.example.simple.Triple triple = 5;</code>
+     * @return The enum numeric value on the wire for triple.
+     */
+    @java.lang.Override public int getTripleValue() {
+      return triple_;
+    }
+    /**
+     * <code>.example.simple.Triple triple = 5;</code>
+     * @return The triple.
+     */
+    @java.lang.Override public example.simple.Simple.Triple getTriple() {
+      @SuppressWarnings("deprecation")
+      example.simple.Simple.Triple result = example.simple.Simple.Triple.valueOf(triple_);
+      return result == null ? example.simple.Simple.Triple.UNRECOGNIZED : result;
+    }
+
+    public static final int OPTIONAL_BOOL_FIELD_NUMBER = 6;
+    private com.google.protobuf.BoolValue optionalBool_;
+    /**
+     * <code>.google.protobuf.BoolValue optional_bool = 6;</code>
+     * @return Whether the optionalBool field is set.
+     */
+    @java.lang.Override
+    public boolean hasOptionalBool() {
+      return optionalBool_ != null;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue optional_bool = 6;</code>
+     * @return The optionalBool.
+     */
+    @java.lang.Override
+    public com.google.protobuf.BoolValue getOptionalBool() {
+      return optionalBool_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : optionalBool_;
+    }
+    /**
+     * <code>.google.protobuf.BoolValue optional_bool = 6;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.BoolValueOrBuilder getOptionalBoolOrBuilder() {
+      return getOptionalBool();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -297,6 +505,12 @@ public final class Simple {
       }
       for (int i = 0; i < sampleList_.size(); i++) {
         output.writeInt32NoTag(sampleList_.getInt(i));
+      }
+      if (triple_ != example.simple.Simple.Triple.UNSET.getNumber()) {
+        output.writeEnum(5, triple_);
+      }
+      if (optionalBool_ != null) {
+        output.writeMessage(6, getOptionalBool());
       }
       unknownFields.writeTo(output);
     }
@@ -332,6 +546,14 @@ public final class Simple {
         }
         sampleListMemoizedSerializedSize = dataSize;
       }
+      if (triple_ != example.simple.Simple.Triple.UNSET.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(5, triple_);
+      }
+      if (optionalBool_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, getOptionalBool());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -355,6 +577,12 @@ public final class Simple {
           .equals(other.getName())) return false;
       if (!getSampleListList()
           .equals(other.getSampleListList())) return false;
+      if (triple_ != other.triple_) return false;
+      if (hasOptionalBool() != other.hasOptionalBool()) return false;
+      if (hasOptionalBool()) {
+        if (!getOptionalBool()
+            .equals(other.getOptionalBool())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -376,6 +604,12 @@ public final class Simple {
       if (getSampleListCount() > 0) {
         hash = (37 * hash) + SAMPLE_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getSampleListList().hashCode();
+      }
+      hash = (37 * hash) + TRIPLE_FIELD_NUMBER;
+      hash = (53 * hash) + triple_;
+      if (hasOptionalBool()) {
+        hash = (37 * hash) + OPTIONAL_BOOL_FIELD_NUMBER;
+        hash = (53 * hash) + getOptionalBool().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -518,6 +752,14 @@ public final class Simple {
 
         sampleList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000001);
+        triple_ = 0;
+
+        if (optionalBoolBuilder_ == null) {
+          optionalBool_ = null;
+        } else {
+          optionalBool_ = null;
+          optionalBoolBuilder_ = null;
+        }
         return this;
       }
 
@@ -553,6 +795,12 @@ public final class Simple {
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.sampleList_ = sampleList_;
+        result.triple_ = triple_;
+        if (optionalBoolBuilder_ == null) {
+          result.optionalBool_ = optionalBool_;
+        } else {
+          result.optionalBool_ = optionalBoolBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -620,6 +868,12 @@ public final class Simple {
             sampleList_.addAll(other.sampleList_);
           }
           onChanged();
+        }
+        if (other.triple_ != 0) {
+          setTripleValue(other.getTripleValue());
+        }
+        if (other.hasOptionalBool()) {
+          mergeOptionalBool(other.getOptionalBool());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -867,6 +1121,179 @@ public final class Simple {
         onChanged();
         return this;
       }
+
+      private int triple_ = 0;
+      /**
+       * <code>.example.simple.Triple triple = 5;</code>
+       * @return The enum numeric value on the wire for triple.
+       */
+      @java.lang.Override public int getTripleValue() {
+        return triple_;
+      }
+      /**
+       * <code>.example.simple.Triple triple = 5;</code>
+       * @param value The enum numeric value on the wire for triple to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTripleValue(int value) {
+        
+        triple_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.example.simple.Triple triple = 5;</code>
+       * @return The triple.
+       */
+      @java.lang.Override
+      public example.simple.Simple.Triple getTriple() {
+        @SuppressWarnings("deprecation")
+        example.simple.Simple.Triple result = example.simple.Simple.Triple.valueOf(triple_);
+        return result == null ? example.simple.Simple.Triple.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.example.simple.Triple triple = 5;</code>
+       * @param value The triple to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTriple(example.simple.Simple.Triple value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        triple_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.example.simple.Triple triple = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTriple() {
+        
+        triple_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.BoolValue optionalBool_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> optionalBoolBuilder_;
+      /**
+       * <code>.google.protobuf.BoolValue optional_bool = 6;</code>
+       * @return Whether the optionalBool field is set.
+       */
+      public boolean hasOptionalBool() {
+        return optionalBoolBuilder_ != null || optionalBool_ != null;
+      }
+      /**
+       * <code>.google.protobuf.BoolValue optional_bool = 6;</code>
+       * @return The optionalBool.
+       */
+      public com.google.protobuf.BoolValue getOptionalBool() {
+        if (optionalBoolBuilder_ == null) {
+          return optionalBool_ == null ? com.google.protobuf.BoolValue.getDefaultInstance() : optionalBool_;
+        } else {
+          return optionalBoolBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.google.protobuf.BoolValue optional_bool = 6;</code>
+       */
+      public Builder setOptionalBool(com.google.protobuf.BoolValue value) {
+        if (optionalBoolBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          optionalBool_ = value;
+          onChanged();
+        } else {
+          optionalBoolBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.BoolValue optional_bool = 6;</code>
+       */
+      public Builder setOptionalBool(
+          com.google.protobuf.BoolValue.Builder builderForValue) {
+        if (optionalBoolBuilder_ == null) {
+          optionalBool_ = builderForValue.build();
+          onChanged();
+        } else {
+          optionalBoolBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.BoolValue optional_bool = 6;</code>
+       */
+      public Builder mergeOptionalBool(com.google.protobuf.BoolValue value) {
+        if (optionalBoolBuilder_ == null) {
+          if (optionalBool_ != null) {
+            optionalBool_ =
+              com.google.protobuf.BoolValue.newBuilder(optionalBool_).mergeFrom(value).buildPartial();
+          } else {
+            optionalBool_ = value;
+          }
+          onChanged();
+        } else {
+          optionalBoolBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.BoolValue optional_bool = 6;</code>
+       */
+      public Builder clearOptionalBool() {
+        if (optionalBoolBuilder_ == null) {
+          optionalBool_ = null;
+          onChanged();
+        } else {
+          optionalBool_ = null;
+          optionalBoolBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.BoolValue optional_bool = 6;</code>
+       */
+      public com.google.protobuf.BoolValue.Builder getOptionalBoolBuilder() {
+        
+        onChanged();
+        return getOptionalBoolFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.google.protobuf.BoolValue optional_bool = 6;</code>
+       */
+      public com.google.protobuf.BoolValueOrBuilder getOptionalBoolOrBuilder() {
+        if (optionalBoolBuilder_ != null) {
+          return optionalBoolBuilder_.getMessageOrBuilder();
+        } else {
+          return optionalBool_ == null ?
+              com.google.protobuf.BoolValue.getDefaultInstance() : optionalBool_;
+        }
+      }
+      /**
+       * <code>.google.protobuf.BoolValue optional_bool = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder> 
+          getOptionalBoolFieldBuilder() {
+        if (optionalBoolBuilder_ == null) {
+          optionalBoolBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.BoolValue, com.google.protobuf.BoolValue.Builder, com.google.protobuf.BoolValueOrBuilder>(
+                  getOptionalBool(),
+                  getParentForChildren(),
+                  isClean());
+          optionalBool_ = null;
+        }
+        return optionalBoolBuilder_;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -934,21 +1361,27 @@ public final class Simple {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\014simple.proto\022\016example.simple\"Q\n\rSimple" +
-      "Message\022\n\n\002id\030\001 \001(\005\022\021\n\tis_simple\030\002 \001(\010\022\014" +
-      "\n\004name\030\003 \001(\t\022\023\n\013sample_list\030\004 \003(\005b\006proto" +
-      "3"
+      "\n\014simple.proto\022\016example.simple\032\036google/p" +
+      "rotobuf/wrappers.proto\"\254\001\n\rSimpleMessage" +
+      "\022\n\n\002id\030\001 \001(\005\022\021\n\tis_simple\030\002 \001(\010\022\014\n\004name\030" +
+      "\003 \001(\t\022\023\n\013sample_list\030\004 \003(\005\022&\n\006triple\030\005 \001" +
+      "(\0162\026.example.simple.Triple\0221\n\roptional_b" +
+      "ool\030\006 \001(\0132\032.google.protobuf.BoolValue*(\n" +
+      "\006Triple\022\t\n\005UNSET\020\000\022\010\n\004TRUE\020\001\022\t\n\005FALSE\020\002b" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.protobuf.WrappersProto.getDescriptor(),
         });
     internal_static_example_simple_SimpleMessage_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_example_simple_SimpleMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_example_simple_SimpleMessage_descriptor,
-        new java.lang.String[] { "Id", "IsSimple", "Name", "SampleList", });
+        new java.lang.String[] { "Id", "IsSimple", "Name", "SampleList", "Triple", "OptionalBool", });
+    com.google.protobuf.WrappersProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

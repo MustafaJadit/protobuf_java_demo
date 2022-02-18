@@ -1,10 +1,28 @@
 syntax = "proto3";
 
+import "google/protobuf/wrappers.proto";
+
+
 package example.simple;
 
+
 message  SimpleMessage{
+
   int32 id = 1;
   bool is_simple = 2;
   string name = 3;
   repeated  int32 sample_list = 4;
+
+  Triple triple = 5;
+
+  google.protobuf.BoolValue optional_bool = 6;
+
+
+}
+
+
+enum Triple{
+  UNSET = 0;
+  TRUE = 1;
+  FALSE = 2;
 }

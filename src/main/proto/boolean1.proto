@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package example.simple;
+
+message MyMessage{
+  bool non_optional_bool1 = 1;
+  optional bool optional_bool2 = 2;
+}
+

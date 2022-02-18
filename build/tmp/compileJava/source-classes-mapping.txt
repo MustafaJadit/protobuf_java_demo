@@ -8,32 +8,26 @@ com/example/tutorial/protos/Person.java
  com.example.tutorial.protos.Person$PhoneNumberOrBuilder
  com.example.tutorial.protos.Person$PhoneType
  com.example.tutorial.protos.Person$PhoneType$1
-example/enumerations/EnumExample.java
- example.enumerations.EnumExample
- example.enumerations.EnumExample$DayOfTheWeek
- example.enumerations.EnumExample$DayOfTheWeek$1
- example.enumerations.EnumExample$EnumMessage
- example.enumerations.EnumExample$EnumMessage$1
- example.enumerations.EnumExample$EnumMessage$Builder
- example.enumerations.EnumExample$EnumMessageOrBuilder
+com/github/mustafaj/EnumMessage.java
+ com.github.mustafaj.EnumMessage
+EnumExample.java
+ EnumExample
+ EnumExample$DayOfTheWeek
+ EnumExample$DayOfTheWeek$1
+ EnumExample$EnumMessage
+ EnumExample$EnumMessage$1
+ EnumExample$EnumMessage$Builder
+ EnumExample$EnumMessageOrBuilder
 com/example/tutorial/protos/AddressBookProtos.java
  com.example.tutorial.protos.AddressBookProtos
-com/github/mustafaj/EnumMain.java
- com.github.mustafaj.EnumMain
 com/example/tutorial/protos/AddressBook.java
  com.example.tutorial.protos.AddressBook
  com.example.tutorial.protos.AddressBook$1
  com.example.tutorial.protos.AddressBook$Builder
 com/example/tutorial/protos/AddressBookOrBuilder.java
  com.example.tutorial.protos.AddressBookOrBuilder
-example/simple/Simple.java
- example.simple.Simple
- example.simple.Simple$SimpleMessage
- example.simple.Simple$SimpleMessage$1
- example.simple.Simple$SimpleMessage$Builder
- example.simple.Simple$SimpleMessageOrBuilder
-com/github/mustafaj/AddressbookMain.java
- com.github.mustafaj.AddressbookMain
+com/github/mustafaj/SimpleMain.java
+ com.github.mustafaj.SimpleMain
 Services.java
  Services
  Services$SearchRequest
@@ -44,9 +38,47 @@ Services.java
  Services$SearchResponse$1
  Services$SearchResponse$Builder
  Services$SearchResponseOrBuilder
-com/github/mustafaj/SimpleMain.java
- com.github.mustafaj.SimpleMain
-com/example/tutorial/protos/PersonOrBuilder.java
- com.example.tutorial.protos.PersonOrBuilder
+com/github/mustafaj/StringDemo.java
+ com.github.mustafaj.StringDemo
+Boolean1.java
+ Boolean1
+ Boolean1$MyMessage
+ Boolean1$MyMessage$1
+ Boolean1$MyMessage$Builder
+ Boolean1$MyMessageOrBuilder
+EnumExample4.java
+ EnumExample4
+ EnumExample4$DayOfTheWeek
+ EnumExample4$DayOfTheWeek$1
+ EnumExample4$EnumMessage
+ EnumExample4$EnumMessage$1
+ EnumExample4$EnumMessage$Builder
+ EnumExample4$EnumMessageOrBuilder
+example/simple/Simple.java
+ example.simple.Simple
+ example.simple.Simple$SimpleMessage
+ example.simple.Simple$SimpleMessage$1
+ example.simple.Simple$SimpleMessage$Builder
+ example.simple.Simple$SimpleMessageOrBuilder
+ example.simple.Simple$Triple
+ example.simple.Simple$Triple$1
+example/simple/Boolean1.java
+ example.simple.Boolean1
+ example.simple.Boolean1$MyMessage
+ example.simple.Boolean1$MyMessage$1
+ example.simple.Boolean1$MyMessage$Builder
+ example.simple.Boolean1$MyMessageOrBuilder
 com/github/mustafaj/ProtoToJSONMain.java
  com.github.mustafaj.ProtoToJSONMain
+three/four/String2.java
+ three.four.String2
+ three.four.String2$Five
+ three.four.String2$Five$1
+ three.four.String2$Five$Builder
+ three.four.String2$FiveOrBuilder
+com/example/tutorial/protos/PersonOrBuilder.java
+ com.example.tutorial.protos.PersonOrBuilder
+com/github/mustafaj/AddressbookMain.java
+ com.github.mustafaj.AddressbookMain
+com/github/mustafaj/BooleanDemo1.java
+ com.github.mustafaj.BooleanDemo1
